@@ -1,7 +1,9 @@
+import { Reducers } from "./Reducers"
 
 export enum EActionTypes {
     ADDED_ITEM = "added-item",
-    REMOVE_ITEM = "remove-item"
+    REMOVE_ITEM = "remove-item",
+    GET_ITEMS = "get-items"
 }
 
 export interface IProductItem {
@@ -11,6 +13,7 @@ export interface IProductItem {
     price: number
     imageURL: string
 }
+export type IBasketItem = IProductItem
 
 export interface IAddedItem {
     type : EActionTypes.ADDED_ITEM
@@ -20,5 +23,10 @@ export interface IRemoveItem {
     type : EActionTypes.REMOVE_ITEM
     payload: IProductItem
 }
+export interface IProductAction {
+    type : EActionTypes.GET_ITEMS
+}
 
-export type IAction = IAddedItem | IRemoveItem
+export type IBasketAction = IAddedItem | IRemoveItem
+
+export type IState = ReturnType<typeof Reducers>

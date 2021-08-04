@@ -1,8 +1,11 @@
 import { combineReducers } from "redux";
-import { EActionTypes, IAction, IProductItem } from "./StateTypes";
+import { Data } from "../Data/Data";
+import { EActionTypes, IBasketAction, IBasketItem, IProductAction, IProductItem } from "./StateTypes";
 
+const BasketInitialState:IBasketItem[] = [];
+const ProductInitialState:IProductItem[] = Data;
 
-const ProductReducer = (state:IProductItem[], action:IAction) => {
+const BasketReducer = (state:IBasketItem[] = BasketInitialState, action:IBasketAction) => {
     switch(action.type)
     {
         case EActionTypes.ADDED_ITEM:
@@ -14,8 +17,20 @@ const ProductReducer = (state:IProductItem[], action:IAction) => {
     }
 }
 
+const ProductReducer = (state:IProductItem[] = ProductInitialState, action:IProductAction) => {
+    switch(action.type)
+    {
+        case EActionTypes.GET_ITEMS:
+            return state;
+        default:
+            return state;
+    }
+}
+
+
 const Reducers = combineReducers({
-    items : ProductReducer,
+    cart : BasketReducer,
+    product : ProductReducer
 })
 
 export { Reducers }

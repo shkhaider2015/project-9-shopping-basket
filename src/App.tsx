@@ -1,26 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ListProduct } from './Components/ListProduct';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return <div>
+    <div style={{ width : '100%', textAlign : 'center' }} ><h1 >SHOPPING BASKET</h1></div>
+    <div style={{ marginLeft: '15vw', marginRight: '15vw', marginTop: '5vw' }} >
+      <ListProduct />
     </div>
-  );
+
+    <div style={{ position : 'fixed', bottom : 0, width :'100vw', border : '1px solid black' }} >
+        ...Footer
+    </div>
+  </div>
 }
 
 export default App;
