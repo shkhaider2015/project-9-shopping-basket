@@ -36,3 +36,12 @@
     transform: rotate(360deg);
   }
 }
+
+.heading {
+  color: black;
+  font-size: 4vw;
+  font-weight: bold;
+  -webkit-text-fill-color: lightblue; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}

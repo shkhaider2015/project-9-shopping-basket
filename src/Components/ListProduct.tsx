@@ -1,15 +1,22 @@
-import { Data } from "../Data/Data";
-import { IProductItem } from "../State/StateTypes";
+import { useSelector } from "react-redux";
+import { IProductItem, IState } from "../State/StateTypes";
+import { useActions } from "../State/useActions";
 
 export const ListProduct = () => {
+
+    const products = useSelector((state:IState) => state.product);
+    const cart = useSelector((state:IState) => state.cart);
+
+    const { AddedItem } = useActions()
+
     return <div style={{ display: 'flex', flexDirection : 'row', flexWrap : 'wrap', justifyContent : 'start' }} >
         {
-            Data.map(
+            products.map(
                 (item: IProductItem, index: number) => (
                     <div style={{flexBasis: '33%', marginTop : '2vh'  }} >
                     <div style={{ width: '15vw', padding: 10, boxShadow: '0 3em 3em rgba(0,0,0,0.1)'}}>
                         <div >
-                            <img src={item.imageURL} width="100%" />
+                            <img alt="product" src={item.imageURL} width="100%" height="220vh" />
                         </div>
                         <div>
                             <span style={{ fontSize : '3vh', fontWeight : 'bold' }} >{item.title}</span>
@@ -28,8 +35,11 @@ export const ListProduct = () => {
                             marginTop : '1vh',
                             padding : '0.5vh'
                         }} 
+                        onClick={() => AddedItem(item)}
+                        disabled={cart.find((ele:IProductItem) => ele.id === item.id) === item}
                         > 
-                            Add to cart </button>
+                        { cart.find((ele:IProductItem) => ele.id === item.id) === item ? "Added " : "Add " }
+                            to cart </button>
                     </div>
                     </div>
                 )

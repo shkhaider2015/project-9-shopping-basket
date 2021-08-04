@@ -1,6 +1,6 @@
 import { IProductItem } from "../State/StateTypes";
 import { Shirt1, Shirt2, Shirt3, 
-    Shirt4, Shirt5, Shirt6, Shirt8, Shirt9 } from "./Images";
+    Shirt4, Shirt6, Shirt8, Shirt9 } from "./Images";
 
 const desc:string = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
 molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
@@ -12,49 +12,49 @@ const Data:IProductItem[] = [
         id : '0001',
         title : 'Shirt 1',
         description : desc,
-        price : 233,
+        price : 899,
         imageURL : Shirt1
     },
     {
         id : '0002',
         title : 'Shirt 2',
         description : desc,
-        price : 233,
+        price : 1099,
         imageURL : Shirt2
     },
     {
         id : '0003',
         title : 'Shirt 3',
         description : desc,
-        price : 233,
+        price : 1150,
         imageURL : Shirt3
     },
     {
         id : '0004',
         title : 'Shirt 4',
         description : desc,
-        price : 233,
+        price : 730,
         imageURL : Shirt4
-    },
-    {
-        id : '0005',
-        title : 'Shirt 5',
-        description : desc,
-        price : 233,
-        imageURL : Shirt8
     },
     {
         id : '0006',
         title : 'Shirt 6',
         description : desc,
-        price : 233,
+        price : 999,
         imageURL : Shirt6
+    },
+    {
+        id : '0005',
+        title : 'Shirt 5',
+        description : desc,
+        price : 1049,
+        imageURL : Shirt8
     },
     {
         id : '0007',
         title : 'Shirt 9',
         description : desc,
-        price : 233,
+        price : 749,
         imageURL : Shirt9
     },
 ]
