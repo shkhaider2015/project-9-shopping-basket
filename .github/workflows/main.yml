@@ -38,9 +38,11 @@ jobs:
       # Creating Build   
       - name: Creating build
         run: sudo yarn build
-      
+      - name: Go to ./build
+        run: cd build
+
       # Deploying On Surge  
       - name: Installing Surge
         run: npm install --global surge
       - name: Deploy on surge
-        run: surge ./build --domain https://shkhaider-shopping-basket.surge.sh --token ${{secrets.SURGE_TOKEN}}
+        run: surge --domain https://shkhaider-shopping-basket.surge.sh --token ${{secrets.SURGE_TOKEN}}
